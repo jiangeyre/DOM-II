@@ -62,7 +62,11 @@ head2.addEventListener("click", () => {
     head2.style.backgroundColor = "lightsteelblue";
 })
 
-
+//9 - scrolling wheel from 0 to 1200px bottom of page
+const intro = document.querySelector(".intro");
+intro.addEventListener("wheel", () => {
+    window.scrollTo(0, 1200);
+})
 
 
 //NAV Refreshing - 10
@@ -73,7 +77,7 @@ nav.addEventListener("click", function(x) {x.preventDefault()})
 
 //propagation = prevents any duplicate console entry when you click on the sign me up buttons at the bottom of the page
 
-const buttDiv = document.querySelector(".btm-content");
+const buttDiv = document.querySelector(".bottom-content");
 buttDiv.addEventListener("click", (x) => {
     console.log("WELCOME TO THE FUNNNNNN BUSSSSS, MY CHILD!!!!!");
 })
