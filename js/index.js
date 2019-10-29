@@ -54,6 +54,22 @@ window.addEventListener("resize", () => {
     destImg.src = "img/Joao.jpg";
 })
 
+//wheel
+function zoom(event){
+    event.preventDefault();
+    scale += event.deltaY * -0.01;
+
+    //restrict scale
+    scale = Math.min(Math.max(.125, scale), 4);
+
+    //apply scale transform
+    destImg.style.transform = `scale(${scale})`;
+}
+let scale = 1;
+destImg.onwheel = zoom;
+
+destImg.addEventListener("wheel", zoom);
+
 //adding a background color and change font color to header at top - 8
 const head2 = document.querySelector("h2");
 
@@ -72,6 +88,30 @@ intro.addEventListener("wheel", () => {
 //NAV Refreshing - 10
 const nav = document.querySelector("nav");
 nav.addEventListener("click", function(x) {x.preventDefault()})
+
+//SELECT mouse event
+
+const destPar = document.querySelector(".destination p");
+destPar.addEventListener("select", () => {
+    destPar.style.color = "darkblue";
+    destPar.style.backgroundColor = "cadetblue";
+})
+
+
+
+
+
+// //focus and blur
+// const destH4 = document.querySelector(".content-destination h2");
+// destH4.addEventListener('focus', (event) => {
+//     event.target.style.backgroundColor = "thistle";
+// }, true);
+// destH4.addEventListener('blur', (event) => {
+//     event.target.style.backgroundColor = "paleturquoise";
+// }, true);
+
+
+
 
 
 
